@@ -2,7 +2,7 @@ import { alertas } from "../entities/alertas.entity";
 
 export interface AlertasRepository {
 
-    estadoGet(): Promise<alertas[]>;
+    estadoGet(): Promise<alertas[]>
     fecha(): Date;
     tipo_alertas(): string;
     agregarAlerta(nuevaAlerta: alertas): Promise<void>
