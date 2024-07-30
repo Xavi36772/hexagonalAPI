@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getControllersPost = exports.getControllers = void 0;
+const mysql_adapters_1 = require("../adapters/mysql.adapters");
+const alertaAgua_1 = require("../../application/services/alertaAgua");
+const getAlertas_1 = require("../getAlertas");
+const MySqlAdapterr = new mysql_adapters_1.MySqlAdapter();
+const getAlertas = new alertaAgua_1.GetAllAlertas(MySqlAdapterr);
+exports.getControllers = new getAlertas_1.GetAllControllers(getAlertas);
+const crearAlerta = new alertaAgua_1.CrearAlertas(MySqlAdapterr);
+exports.getControllersPost = new getAlertas_1.CrearALertasQ(crearAlerta);

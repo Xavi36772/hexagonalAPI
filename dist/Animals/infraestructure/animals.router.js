@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const dependencies_1 = require("./dependencies");
+const dependencies_2 = require("./dependencies");
+const animmalRouter = (0, express_1.Router)();
+animmalRouter.get("/", dependencies_1.allAnimalsController.run.bind(dependencies_1.allAnimalsController));
+animmalRouter.post("/", dependencies_2.cuyoPost.run.bind(dependencies_2.cuyoPost));
+animmalRouter.delete("/:id_Roedor", dependencies_1.deleteCuyoController1.run.bind(dependencies_1.deleteCuyoController1));
+exports.default = animmalRouter;
